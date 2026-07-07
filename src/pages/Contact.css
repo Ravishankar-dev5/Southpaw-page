@@ -1,0 +1,64 @@
+.contact__layout {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 3.5rem;
+  align-items: start;
+}
+.contact__info h2 { font-size: clamp(1.9rem, 3.2vw, 2.7rem); margin: 1rem 0 1rem; }
+.contact__cards { display: flex; flex-direction: column; gap: 1.4rem; margin-top: 2.5rem; }
+.contact__item { display: flex; gap: 1rem; align-items: center; }
+.contact__ic {
+  width: 48px; height: 48px; flex-shrink: 0; border-radius: 14px;
+  display: grid; place-items: center; font-size: 1.3rem; color: var(--gold-200);
+  background: linear-gradient(135deg, rgba(201,162,39,.18), rgba(201,162,39,.04));
+  border: 1px solid rgba(201,162,39,.25);
+}
+.contact__item strong { display: block; font-size: 1rem; }
+.contact__item p { font-size: 0.9rem; }
+
+/* Form */
+.contact__form { padding: clamp(1.8rem, 3vw, 2.6rem); display: flex; flex-direction: column; gap: 1.2rem; }
+.field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; }
+.field { display: flex; flex-direction: column; gap: 0.5rem; }
+.field span { font-size: 0.8rem; font-weight: 600; letter-spacing: 0.04em; color: var(--slate-300); }
+.field input, .field select, .field textarea {
+  font-family: var(--font-body); font-size: 0.95rem;
+  padding: 0.9rem 1rem; border-radius: 12px;
+  background: rgba(255,255,255,.03);
+  border: 1px solid var(--glass-border);
+  color: var(--ivory); resize: vertical;
+  transition: border-color .3s, background .3s, box-shadow .3s;
+}
+.field input::placeholder, .field textarea::placeholder { color: var(--slate-500); }
+.field input:focus, .field select:focus, .field textarea:focus {
+  outline: none; border-color: var(--gold-400);
+  background: rgba(255,255,255,.05);
+  box-shadow: 0 0 0 3px rgba(201,162,39,.14);
+}
+.field select { appearance: none; cursor: pointer; }
+.field option { background: var(--navy-800); color: var(--ivory); }
+.contact__submit { margin-top: 0.5rem; align-self: flex-start; }
+.contact__success {
+  display: flex; align-items: center; gap: 0.6rem;
+  background: rgba(201,162,39,.12); border: 1px solid rgba(201,162,39,.35);
+  color: var(--gold-200); padding: 0.9rem 1.1rem; border-radius: 12px;
+  font-size: 0.9rem;
+}
+.contact__success svg { font-size: 1.3rem; flex-shrink: 0; }
+
+/* Offices */
+.contact__offices-sec { background: var(--navy-800); }
+.contact__offices { display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; }
+.contact__office { padding: 2rem 1.7rem; }
+.contact__office-tz { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.14em; font-weight: 700; }
+.contact__office h3 { font-size: 1.5rem; margin: 0.5rem 0 0.4rem; }
+.contact__office p { font-size: 0.9rem; }
+
+@media (max-width: 980px) {
+  .contact__layout { grid-template-columns: 1fr; gap: 2.5rem; }
+  .contact__offices { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 520px) {
+  .field-row { grid-template-columns: 1fr; }
+  .contact__offices { grid-template-columns: 1fr; }
+}
